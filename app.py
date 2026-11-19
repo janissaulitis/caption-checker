@@ -123,14 +123,36 @@ kit.table([{"n": n, "a": r["original"], "c": r["clean"], "cap": r["caption"], "c
 st.caption("Fixed: spelling, letters or order restored from the reference list · New name: not in the reference list, "
            "confirm and add it · Held back: needs a person (check, duplicate or too long) and is left out of the export.")
 
+FLAGS = {  # small flags for the lower-third preview
+    "LAT": '<rect width="30" height="20" fill="#9E3039"/><rect y="8" width="30" height="4" fill="#fff"/>',
+    "POL": '<rect width="30" height="10" fill="#fff"/><rect y="10" width="30" height="10" fill="#DC143C"/>',
+    "CZE": '<rect width="30" height="10" fill="#fff"/><rect y="10" width="30" height="10" fill="#D7141A"/><path d="M0 0L15 10L0 20Z" fill="#11457E"/>',
+    "DEN": '<rect width="30" height="20" fill="#C8102E"/><rect x="9" width="4" height="20" fill="#fff"/><rect y="8" width="30" height="4" fill="#fff"/>',
+    "ESP": '<rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/>',
+    "GER": '<rect width="30" height="7" fill="#000"/><rect y="7" width="30" height="6" fill="#DD0000"/><rect y="13" width="30" height="7" fill="#FFCE00"/>',
+    "GBR": '<rect width="30" height="20" fill="#012169"/><path d="M0 0L30 20M30 0L0 20" stroke="#fff" stroke-width="4"/>'
+           '<path d="M0 0L30 20M30 0L0 20" stroke="#C8102E" stroke-width="1.5"/><path d="M15 0V20M0 10H30" stroke="#fff" stroke-width="6"/>'
+           '<path d="M15 0V20M0 10H30" stroke="#C8102E" stroke-width="3.5"/>',
+}
+
+
+def flag(code):
+    return f'<svg viewBox="0 0 30 20" aria-hidden="true">{FLAGS[code]}</svg>' if code in FLAGS else ""
+
+
 # ------------------------------------------------------------------ preview + export
 ready = checker.export_rows(results)
+# show a mix of countries in the preview: first ready name per country, then fill up
+seen, show = set(), []
+for e in ready:
+    if e["country"] not in seen: seen.add(e["country"]); show.append(e)
+show = (show + [e for e in ready if e not in show])[:4]
 st.markdown("#### How it looks on screen")
 st.markdown('<div class="k-stage">' + ("".join(
     f'<span class="lt"><span class="edge"></span><span class="nm"><b>{html.escape(e["caption"])}</b>'
-    f'<small>{html.escape(e["role"])}</small></span><span class="co">{html.escape(e["country"])}</span></span>'
-    for e in ready[:4]) or '<span style="color:#cfd8e3">Nothing ready yet.</span>') + "</div>", unsafe_allow_html=True)
-st.caption("A mock lower third with the first four names that are ready.")
+    f'<small>{html.escape(e["role"])}</small></span><span class="co">{flag(e["country"])}{html.escape(e["country"])}</span></span>'
+    for e in show) or '<span style="color:#cfd8e3">Nothing ready yet.</span>') + "</div>", unsafe_allow_html=True)
+st.caption("A mock lower third with four of the names that are ready.")
 
 st.markdown("#### Download")
 d = st.columns(2)
