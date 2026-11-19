@@ -1,0 +1,78 @@
+CAPTIONS
+FIX PLAYER NAMES BEFORE THEY GO ON SCREEN
+Names are invented examples · checked just now
+11 READY
+3 held back until a person confirms: Janis Liepins (check), Kārlis Bērziņš (duplicate), Maximilian Alexander Hoffmann-Schneider (new + too long).
+CHECKED
+14
+FIXED
+10
+HELD FOR A HUMAN
+3
+READY FOR GRAPHICS
+11
+
+▶ 1-min demo
+
+How it works
+
+expand_more
+Start list
+
+↺ Reset to the sample
+
+Clear the list
+
+Upload my own list (CSV or Excel)
+
+expand_more
+
+Edit cells directly, paste rows from a spreadsheet, or add rows at the bottom.
+
+keyboard_arrow_right
+
+Reference names: the correct spellings (11 names)
+
+Result
+#	As received	Clean name	Caption	Country	Role	Status	Why
+1	BERZINS Karlis	KĀRLIS BĒRZIŅŠ	K. Bērziņš	LAT	Player	FIXED	Spelling from reference list (was "BERZINS Karlis"); Also on row(s) 12 — kept this one
+2	kalnina ilze	ILZE KALNIŅA	I. Kalniņa	LAT	Player	FIXED	Spelling from reference list (was "kalnina ilze")
+3	Martins Klavins	MĀRTIŅŠ KĻAVIŅŠ	M. Kļaviņš	LAT	Player	FIXED	Spelling from reference list (was "Martins Klavins")
+4	Elina Steinberga	ELĪNA ŠTEINBERGA	E. Šteinberga	LAT	Player	FIXED	Spelling from reference list (was "Elina Steinberga ")
+5	Rudolfs Petersons	RŪDOLFS PĒTERSONS	R. Pētersons	LAT	Commentator guest	FIXED	Spelling from reference list (was "Rudolfs Petersons")
+6	Agnese Gegere	AGNESE ĢĒĢERE	A. Ģēģere	LAT	Player	FIXED	Spelling from reference list (was "Agnese Gegere")
+7	Janis Liepins	JANIS LIEPINS	J. Liepins	LAT	Player	CHECK	Latvian name not in reference list and has no diacritics — confirm spelling
+8	Lukasz Kowalski	ŁUKASZ KOWALSKI	Ł. Kowalski	POL	Player	FIXED	Spelling from reference list (was "Lukasz Kowalski")
+9	HRUSKA Ondrej	ONDŘEJ HRUŠKA	O. Hruška	CZE	Player	FIXED	Spelling from reference list (was "HRUSKA Ondrej")
+10	Soren Mikkelsen	SØREN MIKKELSEN	S. Mikkelsen	DEN	Player	FIXED	Spelling from reference list (was "Soren Mikkelsen")
+11	Lucia Ferrand	LUCÍA FERRAND	L. Ferrand	ESP	Umpire	FIXED	Spelling from reference list (was "Lucia Ferrand")
+12	Kārlis Bērziņš	KĀRLIS BĒRZIŅŠ	K. Bērziņš	LAT	Player	DUPLICATE	Duplicate of row 1
+13	Maximilian Alexander Hoffmann-Schneider	MAXIMILIAN ALEXANDER HOFFMANN-SCHNEIDER	M. Hoffmann-Schneider	GER	Player	NEW + TOO LONG	Not in reference list — confirm spelling and first/last name order, then add it; Caption is 21 chars, max 20
+14	Peter Smith	PETER SMITH	P. Smith	GBR	Player	OK	
+
+Fixed: spelling, letters or order restored from the reference list · New name: not in the reference list, confirm and add it · Held back: needs a person (check, duplicate or too long) and is left out of the export.
+
+How it looks on screen
+K. BĒRZIŅŠ
+Player
+LAT
+Ł. KOWALSKI
+Player
+POL
+O. HRUŠKA
+Player
+CZE
+S. MIKKELSEN
+Player
+DEN
+
+A mock lower third with four of the names that are ready.
+
+Download
+
+⬇ Clean list for graphics (11 names, CSV)
+
+⬇ Full check with reasons (CSV)
+
+Built by Jānis Saulītis with AI · checker.py · first built in Google Sheets, ported to Python and tested on 30 tricky names
+See more tools
