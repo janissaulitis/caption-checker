@@ -1,7 +1,19 @@
+[theme]
+font = "Barlow:https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap, sans-serif"
+headingFont = "Barlow:https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap, sans-serif"
+baseFontWeight = 500
+baseRadius = "0"
+buttonRadius = "0"
+showWidgetBorder = true
+
 [theme.light]
-primaryColor = "#1f9d6f"
-codeTextColor = "#8a5a00"
+primaryColor = "#E0281E"
+backgroundColor = "#F3F4F7"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#0B0E14"
 
 [theme.dark]
-primaryColor = "#2fb985"
-codeTextColor = "#f2c230"
+primaryColor = "#FF3B30"
+backgroundColor = "#0B0E14"
+secondaryBackgroundColor = "#151A24"
+textColor = "#F4F6FA"
